@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>IBVAP | Border Surveillance</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <div>
+                <h1>IBVAP</h1>
+                <span>INTELLIGENT VIDEO ANALYTICS</span>
+            </div>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <a href="#dashboard" class="nav-item active">
+                <i class="fa-solid fa-gauge-high"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#monitoring" class="nav-item">
+                <i class="fa-solid fa-video"></i>
+                <span>Live Monitoring</span>
+            </a>
+
+            <a href="#security-map" class="nav-item">
+                <i class="fa-solid fa-draw-polygon"></i>
+                <span>Security Map</span>
+            </a>
+
+            <a href="#incidents" class="nav-item">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <span>Incidents</span>
+            </a>
+
+            <a href="#anpr" class="nav-item">
+                <i class="fa-solid fa-car"></i>
+                <span>ANPR</span>
+            </a>
+
+            <a href="#analytics" class="nav-item">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Analytics</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="system-small">
+
+                <span class="status-dot green"></span>
+
+                <div>
+                    <strong>System Online</strong>
+                    <small>AI surveillance active</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div class="breadcrumb">
+
+                <span>IBVAP</span>
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+                <strong>Surveillance Dashboard</strong>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="top-status">
+
+                    <span
+                        class="status-dot green"
+                        id="apiDot"
+                    ></span>
+
+                    <span id="apiStatus">
+                        API RUNNING
+                    </span>
+
+                </div>
+
+
+                <div class="top-status">
+
+                    <span
+                        class="status-dot green"
+                        id="aiDot"
+                    ></span>
+
+                    <span id="aiStatus">
+                        AI RUNNING
+                    </span>
+
+                </div>
+
+
+                <div class="top-status">
+
+                    <span
+                        class="status-dot green"
+                        id="cameraDot"
+                    ></span>
+
+                    <span id="cameraStatus">
+                        CAMERA RUNNING
+                    </span>
+
+                </div>
+
+
+                <div class="top-status">
+
+                    <span
+                        class="status-dot green"
+                        id="databaseDot"
+                    ></span>
+
+                    <span id="databaseStatus">
+                        DATABASE
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             DASHBOARD
+        ================================================== -->
+
+        <section id="dashboard" class="dashboard-section">
+
+
+            <div class="page-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        BORDER SURVEILLANCE
+                    </span>
+
+                    <h2>
+                        AI Surveillance Dashboard
+                    </h2>
+
+                    <p>
+                        Real-time intelligent video analytics
+                        using existing CCTV infrastructure.
+                    </p>
+
+                </div>
+
+
+                <div class="live-indicator">
+
+                    <span class="pulse"></span>
+
+                    LIVE SYSTEM
+
+                </div>
+
+            </div>
+
+
+            <!-- SYSTEM STATUS -->
+
+            <div class="system-status">
+
+                <div class="system-status-item">
+
+                    <i class="fa-solid fa-server"></i>
+
+                    <div>
+                        <span>API</span>
+                        <strong id="systemApi">
+                            RUNNING
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="system-status-item">
+
+                    <i class="fa-solid fa-brain"></i>
+
+                    <div>
+                        <span>AI PIPELINE</span>
+                        <strong id="systemAI">
+                            RUNNING
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="system-status-item">
+
+                    <i class="fa-solid fa-video"></i>
+
+                    <div>
+                        <span>CAMERA</span>
+                        <strong id="systemCamera">
+                            RUNNING
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="system-status-item">
+
+                    <i class="fa-solid fa-database"></i>
+
+                    <div>
+                        <span>DATABASE</span>
+                        <strong id="systemDatabase">
+                            CONNECTED
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 STAT CARDS
+            ================================================== -->
+
+            <div class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+
+                    <div>
+
+                        <span>LIVE OBJECTS</span>
+
+                        <strong id="liveObjectCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon cyan">
+                        <i class="fa-solid fa-person"></i>
+                    </div>
+
+                    <div>
+
+                        <span>PERSONS</span>
+
+                        <strong id="livePersonCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        <i class="fa-solid fa-car"></i>
+                    </div>
+
+                    <div>
+
+                        <span>VEHICLES</span>
+
+                        <strong id="liveVehicleCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon red">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+
+                    <div>
+
+                        <span>TOTAL INCIDENTS</span>
+
+                        <strong id="totalIncidents">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        <i class="fa-solid fa-border-all"></i>
+                    </div>
+
+                    <div>
+
+                        <span>BORDER INTRUSIONS</span>
+
+                        <strong id="borderIntrusions">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon yellow">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <div>
+
+                        <span>ZONE INTRUSIONS</span>
+
+                        <strong id="zoneIntrusions">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        <i class="fa-solid fa-person-walking"></i>
+                    </div>
+
+                    <div>
+
+                        <span>LOITERING</span>
+
+                        <strong id="loiteringEvents">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =================================================
+                 LIVE MONITORING
+            ================================================== -->
+
+            <div
+                id="monitoring"
+                class="section-heading"
+            >
+
+                <div>
+
+                    <span class="eyebrow">
+                        LIVE MONITORING
+                    </span>
+
+                    <h3>
+                        Camera Surveillance
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="monitor-grid">
+
+
+                <!-- CAMERA -->
+
+                <div class="card camera-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <span class="card-label">
+                                CAMERA 01
+                            </span>
+
+                            <h3>
+                                Border CCTV
+                            </h3>
+
+                        </div>
+
+
+                        <div class="camera-live">
+
+                            <span class="pulse"></span>
+
+                            LIVE
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="camera-view"
+                        id="cameraContainer"
+                    >
+
+                        <!-- BACKEND LIVE STREAM -->
+
+                        <img
+                            id="cameraFeed"
+                            src="http://127.0.0.1:8000/api/stream"
+                            alt="Live CCTV Feed"
+                        >
+
+
+                        <!-- DYNAMIC DETECTION CANVAS -->
+
+                        <canvas
+                            id="detectionCanvas"
+                        ></canvas>
+
+
+                        <!-- CAMERA OVERLAY -->
+
+                        <div class="camera-overlay">
+
+                            <div>
+
+                                <strong>
+                                    CAM-01
+                                </strong>
+
+                                <span>
+                                    RTSP • AI ENABLED
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- OBJECT COUNTERS -->
+
+                        <div class="camera-detection-counter">
+
+                            <div>
+
+                                <span>OBJECTS</span>
+
+                                <strong id="cameraObjects">
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>PERSONS</span>
+
+                                <strong id="cameraPersons">
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>VEHICLES</span>
+
+                                <strong id="cameraVehicles">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ERROR -->
+
+                        <div
+                            class="camera-error"
+                            id="cameraError"
+                        >
+
+                            <i class="fa-solid fa-video-slash"></i>
+
+                            <span>
+                                Camera stream unavailable
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="camera-footer">
+
+                        <div>
+
+                            <span class="status-dot green"></span>
+
+                            <span>
+                                RTSP CONNECTION
+                            </span>
+
+                        </div>
+
+
+                        <span id="cameraResolution">
+                            LIVE
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- THREAT PANEL -->
+
+                <div class="card threat-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <span class="card-label">
+                                AI ANALYSIS
+                            </span>
+
+                            <h3>
+                                Threat Assessment
+                            </h3>
+
+                        </div>
+
+                        <i class="fa-solid fa-shield"></i>
+
+                    </div>
+
+
+                    <div class="threat-main">
+
+                        <div
+                            class="threat-circle"
+                            id="threatCircle"
+                        >
+
+                            <div>
+
+                                <strong id="threatScore">
+                                    0
+                                </strong>
+
+                                <span>
+                                    SCORE
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="threat-level low">
+
+                            <span>
+                                CURRENT LEVEL
+                            </span>
+
+                            <strong id="threatLevel">
+                                LOW
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="threat-details">
+
+                        <div>
+
+                            <span>
+                                OBJECT
+                            </span>
+
+                            <strong id="threatObject">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                BEHAVIOR
+                            </span>
+
+                            <strong id="threatBehavior">
+                                NORMAL
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                LOITERING
+                            </span>
+
+                            <strong id="threatDuration">
+                                0 sec
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                MOVEMENT
+                            </span>
+
+                            <strong id="threatMovement">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="threat-reasons">
+
+                        <div class="reason-title">
+                            THREAT REASONS
+                        </div>
+
+                        <div id="threatReasons">
+
+                            <div class="reason-empty">
+                                No active threats
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 DETECTIONS
+            ================================================== -->
+
+            <div class="lower-grid">
+
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <span class="card-label">
+                                REAL-TIME AI
+                            </span>
+
+                            <h3>
+                                Current Detections
+                            </h3>
+
+                        </div>
+
+                        <span
+                            class="live-badge"
+                        >
+                            LIVE
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="detection-list"
+                        id="detectionList"
+                    >
+
+                        <div class="empty-state">
+
+                            <i class="fa-solid fa-radar"></i>
+
+                            <span>
+                                Waiting for detections...
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INCIDENTS -->
+
+                <div
+                    class="card"
+                    id="incidents"
+                >
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <span class="card-label">
+                                SECURITY EVENTS
+                            </span>
+
+                            <h3>
+                                Recent Incidents
+                            </h3>
+
+                        </div>
+
+                        <button
+                            class="view-all-btn"
+                            type="button"
+                        >
+                            View All
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="incident-list"
+                        id="incidentList"
+                    >
+
+                        <div class="empty-state">
+
+                            <i class="fa-solid fa-shield"></i>
+
+                            <span>
+                                No incidents
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 SECURITY MAP
+            ================================================== -->
+
+            <section
+                id="security-map"
+                class="security-map-section"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            SECURITY CONTROL
+                        </span>
+
+                        <h3>
+                            Virtual Border & Restricted Zone
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card security-map-card">
+
+
+                    <div class="security-map-header">
+
+                        <div>
+
+                            <span class="card-label">
+                                CAMERA 01
+                            </span>
+
+                            <h3>
+                                Security Map
+                            </h3>
+
+                        </div>
+
+
+                        <div class="map-status-group">
+
+                            <div id="borderStatus">
+                                <span class="status-dot red"></span>
+                                BORDER NOT DEFINED
+                            </div>
+
+                            <div id="zoneStatus">
+                                <span class="status-dot red"></span>
+                                ZONE NOT DEFINED
+                            </div>
+
+                        </div>
+
+                        <div class="map-controls" aria-label="Security map drawing controls">
+                            <button id="drawBorderButton" type="button">
+                                <i class="fa-solid fa-minus"></i>
+                                Draw Border
+                            </button>
+                            <button id="drawZoneButton" type="button">
+                                <i class="fa-solid fa-draw-polygon"></i>
+                                Draw Zone
+                            </button>
+                            <button id="saveMapButton" type="button" disabled>
+                                <i class="fa-solid fa-check"></i>
+                                Save
+                            </button>
+                            <button id="cancelMapButton" type="button" disabled>
+                                <i class="fa-solid fa-xmark"></i>
+                                Cancel
+                            </button>
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="security-map-view"
+                        id="securityMapContainer"
+                    >
+
+                        <img
+                            id="securityMapFeed"
+                            src="http://127.0.0.1:8000/api/stream"
+                            alt="Security Map Feed"
+                        >
+
+                        <canvas
+                            id="securityMapCanvas"
+                        ></canvas>
+
+
+                        <div class="map-overlay-top">
+
+                            <span>
+                                AI SECURITY MAP
+                            </span>
+
+                            <span id="mapObjectCount">
+                                OBJECTS: 0
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="map-empty"
+                            id="mapEmpty"
+                        >
+
+                            <i class="fa-solid fa-draw-polygon"></i>
+
+                            <span>
+                                Border / Zone not configured
+                            </span>
+
+                            <small>
+                                Configure the virtual border
+                                and restricted zone from backend.
+                            </small>
+
+                        </div>
+
+
+                        <div class="map-legend">
+
+                            <div>
+
+                                <span class="legend-dot person"></span>
+
+                                Person
+
+                            </div>
+
+
+                            <div>
+
+                                <span class="legend-line border"></span>
+
+                                Virtual Border
+
+                            </div>
+
+
+                            <div>
+
+                                <span class="legend-zone"></span>
+
+                                Restricted Zone
+
+                            </div>
+
+                        </div>
+
+                        <div class="map-draw-hint" id="mapDrawHint" aria-live="polite">
+                            Select Draw Border or Draw Zone to configure the security map.
+                        </div>
+
+                    </div>
+
+
+                    <div class="security-map-footer">
+
+                        <div>
+
+                            <i class="fa-solid fa-circle-info"></i>
+
+                            <span>
+                                Tracking positions are synchronized
+                                with the AI pipeline.
+                            </span>
+
+                        </div>
+
+
+                        <div id="mapTrackedObjects">
+                            TRACKED OBJECTS: 0
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 ANPR
+            ================================================== -->
+
+            <section
+                id="anpr"
+                class="anpr-section"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            AUTOMATIC NUMBER PLATE RECOGNITION
+                        </span>
+
+                        <h3>
+                            ANPR Results
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="table-container">
+
+                        <table class="anpr-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        TRACK ID
+                                    </th>
+
+                                    <th>
+                                        VEHICLE
+                                    </th>
+
+                                    <th>
+                                        PLATE
+                                    </th>
+
+                                    <th>
+                                        PLATE CONF.
+                                    </th>
+
+                                    <th>
+                                        OCR CONF.
+                                    </th>
+
+                                    <th>
+                                        TIME
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="anprTable">
+
+                                <tr>
+
+                                    <td
+                                        colspan="6"
+                                        class="table-empty"
+                                    >
+                                        No ANPR results
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 ANALYTICS
+            ================================================== -->
+
+            <section
+                id="analytics"
+                class="analytics-section"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            SYSTEM ANALYTICS
+                        </span>
+
+                        <h3>
+                            Surveillance Analytics
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="analytics-grid">
+
+                    <div class="analytics-placeholder">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                        <h3>
+                            Analytics Module
+                        </h3>
+
+                        <p>
+                            Historical analytics and threat
+                            trends will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+
+            <footer class="footer">
+
+                <span>
+                    IBVAP — Intelligent Border Video Analytics Platform
+                </span>
+
+                <span>
+                    AI Surveillance System
+                </span>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- Main JavaScript -->
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
